@@ -15,8 +15,13 @@
 ;;; * Keybindings / Window management
 ;;; *
 
-;;; TODO fix vi-quit & change to vi-quit
-(define-key lem-vi-mode:*command-keymap* "Space q" 'delete-active-window)
+;;; Also known as vi-quit but that one doesn't work
+(define-command delete-active-window-or-exit () ()
+  (if (one-window-p)
+      (exit-lem)
+      (delete-active-window)))
+
+(define-key lem-vi-mode:*command-keymap* "Space q" 'delete-active-window-or-exit)
 (define-key lem-vi-mode:*command-keymap* "Space Q" 'exit-lem)
 
 (define-key lem-vi-mode:*command-keymap* "Space h" 'window-move-left)
