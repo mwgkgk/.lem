@@ -16,6 +16,7 @@
 ;;; *
 
 (define-key lem-vi-mode:*command-keymap* "Space q" 'vi-quit)
+(define-key lem-vi-mode:*command-keymap* "Space Q" 'exit-lem)
 
 (define-key lem-vi-mode:*command-keymap* "Space h" 'window-move-left)
 (define-key lem-vi-mode:*command-keymap* "Space l" 'window-move-right)
