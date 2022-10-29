@@ -54,6 +54,13 @@
 (define-key lem-vi-mode:*command-keymap* "Space x" 'lem-lisp-mode:lisp-compile-and-load-file)
 
 ;;; *
+;;; * Keybindings / Places
+;;; *
+
+;;; TODO pass args to commands from define-key
+(define-key lem-vi-mode:*command-keymap* "; c v c" 'find-file)
+
+;;; *
 ;;; * Colors
 ;;; *
 
