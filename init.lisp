@@ -5,7 +5,14 @@
 (lem-vi-mode:vi-mode)
 
 ;;; *
-;;; * Keybindings / Vim
+;;; * Keybindings / Normal mode
+;;; *
+
+;;; TODO move upstream
+(define-key lem-vi-mode:*command-keymap* "C-d" 'next-page)
+
+;;; *
+;;; * Keybindings / Window management
 ;;; *
 
 (define-key lem-vi-mode:*command-keymap* "Space q" 'vi-quit)
@@ -21,11 +28,19 @@
 (define-key lem-vi-mode:*command-keymap* "Space n" 'split-active-window-vertically)
 (define-key lem-vi-mode:*command-keymap* "Space N" 'split-active-window-horizontally)
 
-;;; TODO move upstream
-(define-key lem-vi-mode:*command-keymap* "C-d" 'next-page)
+;;; *
+;;; * Keybindings / S-exp
+;;; *
+
+(define-key lem-vi-mode:*command-keymap* "C-c o" 'lem::kill-around-form)
+(define-key lem-vi-mode:*command-keymap* "C-c S" 'lem-paredit-mode:paredit-splice)
+;;; TODO move to C-c C-c
+(define-key lem-vi-mode:*command-keymap* "C-c c" 'lem-paredit-mode::paredit-wrap)
+(define-key lem-vi-mode:*command-keymap* "M-L" 'lem-paredit-mode::paredit-slurp)
+(define-key lem-vi-mode:*command-keymap* "M-K" 'lem-paredit-mode::paredit-barf)
 
 ;;; *
-;;; * Keybindings / Lisp
+;;; * Keybindings / Eval
 ;;; *
 
 (define-key lem-vi-mode:*command-keymap* "X" 'lem-lisp-mode:lisp-compile-defun)
