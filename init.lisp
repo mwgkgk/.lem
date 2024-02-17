@@ -71,6 +71,8 @@
 (define-key lem-vi-mode:*normal-keymap* "M-L" 'lem-paredit-mode::paredit-slurp)
 (define-key lem-vi-mode:*normal-keymap* "M-K" 'lem-paredit-mode::paredit-barf)
 
+(define-key lem-vi-mode:*normal-keymap* "q" 'lem-vi-mode/commands:vi-move-to-matching-paren)
+
 ;;; *
 ;;; * Keybindings / Eval
 ;;; *
@@ -81,14 +83,25 @@
 (define-key lem-vi-mode:*normal-keymap* "Space x" 'lem-lisp-mode:lisp-compile-and-load-file)
 
 ;;; *
+;;; * Keybindings / Format
+;;; *
+
+(define-key lem-vi-mode:*normal-keymap* "Space f" 'format-current-buffer)
+
+;;; *
 ;;; * Keybindings / Places
 ;;; *
 
 (define-command open-init-file () ()
-    (lem:find-file
-        (merge-pathnames "init.lisp" (lem:lem-home))))
+  (lem:find-file
+   (merge-pathnames "init.lisp" (lem:lem-home))))
 
 (define-key lem-vi-mode:*normal-keymap* "; c v h" 'open-init-file)
+
+(define-command load-init-file () ()
+  (load (merge-pathnames "init.lisp" (lem:lem-home))))
+
+(define-key lem-vi-mode:*normal-keymap* "F7" 'load-init-file)
 
 ;;; *
 ;;; * Colors
