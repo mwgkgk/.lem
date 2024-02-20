@@ -37,6 +37,12 @@
 (define-key lem-vi-mode:*normal-keymap* "C-w C-w" 'switch-to-last-focused-window)
 
 ;;; *
+;;; * Keybindings / Tabs
+;;; *
+
+(define-key lem-vi-mode:*normal-keymap* "Space C" 'lem/frame-multiplexer::frame-multiplexer-create-with-new-buffer-list)
+
+;;; *
 ;;; * Keybindings / Files
 ;;; *
 
