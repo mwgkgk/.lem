@@ -70,19 +70,18 @@
 ;;; * Keybindings / S-exp
 ;;; *
 
-#+#:nil
-(define-key lem-vi-mode:*normal-keymap* "C-c o" 'lem::kill-around-form)
-(define-key lem-vi-mode:*normal-keymap* "C-c S" 'lem-paredit-mode:paredit-splice)
-(define-key lem-vi-mode:*normal-keymap* "C-c C-c" 'lem-paredit-mode::paredit-wrap)
+(define-key lem-vi-mode:*normal-keymap* "q" 'lem-vi-mode/commands:vi-move-to-matching-paren)
+(define-key lem-vi-mode:*normal-keymap* "C-c C-c" 'lem-paredit-mode::paredit-wrap-round)
 (define-key lem-vi-mode:*normal-keymap* "M-L" 'lem-paredit-mode::paredit-slurp)
 (define-key lem-vi-mode:*normal-keymap* "M-K" 'lem-paredit-mode::paredit-barf)
-
-(define-key lem-vi-mode:*normal-keymap* "q" 'lem-vi-mode/commands:vi-move-to-matching-paren)
+(define-key lem-vi-mode:*normal-keymap* "C-c o" 'lem-core/commands/s-expression::kill-around-form)
+(define-key lem-vi-mode:*normal-keymap* "C-c O" 'lem-paredit-mode:paredit-splice)
 
 ;;; *
 ;;; * Keybindings / Eval
 ;;; *
 
+;;; TODO move to lisp mode
 ;;; TODO change X
 (define-key lem-vi-mode:*normal-keymap* "X" 'lem-lisp-mode:lisp-compile-defun)
 (define-key lem-vi-mode:*normal-keymap* "; x" 'lem-lisp-mode:lisp-compile-defun)
