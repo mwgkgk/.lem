@@ -113,6 +113,8 @@
 ;;; * Colors
 ;;; *
 
-(load (merge-pathnames "themes/fadedvision.lisp" (lem:lem-home)))
+; (load (merge-pathnames "themes/fadedvision.lisp" (lem:lem-home)))
 
-(load-theme "fadedvision")
+; (load-theme "fadedvision")
+
+(load-theme "woodland")
