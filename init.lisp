@@ -52,6 +52,7 @@
 (define-key lem-vi-mode:*normal-keymap* "s s" 'lem-core/commands/project::project-find-file)
 (define-key lem-vi-mode:*normal-keymap* "s p" 'lem-core/commands/project::project-switch)
 (define-key lem-vi-mode:*normal-keymap* "s b" 'select-buffer)
+(define-key lem-vi-mode:*normal-keymap* "s Space" 'select-buffer)
 
 (define-command switch-to-other-buffer () ()
   (switch-to-buffer (other-buffer)))
@@ -70,7 +71,7 @@
 ;;; * Keybindings / S-exp
 ;;; *
 
-(define-key lem-vi-mode:*normal-keymap* "q" 'lem-vi-mode/commands:vi-move-to-matching-paren)
+(define-key lem-vi-mode:*normal-keymap* "q" 'lem-vi-mode/commands:vi-move-to-matching-item)
 (define-key lem-vi-mode:*normal-keymap* "C-c C-c" 'lem-paredit-mode::paredit-wrap-round)
 (define-key lem-vi-mode:*normal-keymap* "M-L" 'lem-paredit-mode::paredit-slurp)
 (define-key lem-vi-mode:*normal-keymap* "M-K" 'lem-paredit-mode::paredit-barf)
